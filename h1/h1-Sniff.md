@@ -89,16 +89,48 @@ Ethernet II. Näyttää MAC-osoitteet. Kuvasta voidaan esimerkiksi päätellä k
 ![K13](13.png)
 
 ## e) Mitäs tuli surffattua?
+Tehtävää varten tuli ladata surfing-secure.pcap tiedosto, mutta piti vielä väliin latailla wget millä saada se ladattua. 
+
+![K17](17.png)
+
+Wiresharkissa avaaminen tapahtui valitsemalla file valikosta open ja sieltä tiedosto avaukseen.
+
+![K18](18.png)
+
+Saadaan näkyviin laaja kattaus kaappausta. Ensin pisti silmään esimerkiksi se, että paketteja oli kokonaisuudessan **283**. Lisäksi mielestäni käyttäjä toimii IPv4 osoitteella 192.168.122.7.
+
+![K19](19.png)
+
+Tarkastelemalla tarkemmin Protocal Hierarchy Statistics valikkoa, nähdään tarkempaa jakaumaa pakettien tyypistä.
+
+![K22](22.png)
+
+Endpointseja tarkastelemalla nähdään, että Ethernet yhteyksiä on 2 kappaletta ja IPv4 osoitteita 7 kappaletta.
+
+![K23](23.png)
+![K24](24.png)
+
+I/O Graphsista saadaan selville myös se, että pakettien sieppaus kesti noin 7 sekunttia.
+
+![K25](25.png)
 
 ## f) Mitä selainta käyttäjä käyttää?
+Tätä yritin etsiä, mutta en löytänyt millään joten jäi tyhjä arpa käteen tämän kohdan osalta.
 
 ## g) Minkä merkkinen verkkokortti käyttäjällä on?
+Verkkokorttin malli saadaan näkyviin, kun etsitään käyttäjän toiminnoista siihen sopiva layeri ja löydetään, että kyseessä on Realtek valmistajan verkkokortti.
+
+![K26](26.png)
 
 ## h) Millä weppipalvelimella käyttäjä on surffaillut?
+Kun aletaan tarkastelemaan, millä weppipalvelimella käyttäjä on surfaillut niin etsin DNS eli nimipalveluun liittyviä paketteja. Esimerkiksi paketti numero 19 on nimikysely **terokarvinen.com** ja hieman alempaa paketti 21 löytyy myös **gc.zgo.at**. Myöhemmin löytyy vastauksia kysynnälle osoitteesta **goatcounter.netlify.com**. Tämän alla näitä kahta on yhdisteltynä muodossa **terokarvinen.goatcounter.com**. Tässä varmaan haettu weppipalvelin? Muuta en keksinyt.
+
+![K27](27.png)
 
 ## i) Analyysi
 
-**Tehtävän lopetusaika 29.3.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia.**
+
+**Tehtävän lopetusaika 30.3.2025 kello 22:00. Aktiivista työskentelyä yhteensä noin 3 tuntia.**
 
 ## Lähteet
 
