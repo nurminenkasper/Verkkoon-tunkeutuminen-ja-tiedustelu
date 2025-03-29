@@ -133,4 +133,6 @@ Kun aletaan tarkastelemaan, millä weppipalvelimella käyttäjä on surfaillut n
 **Tehtävän lopetusaika 29.3.2025 kello 22:00. Aktiivista työskentelyä yhteensä noin 3 tuntia.**
 
 ## Lähteet
-
+https://askubuntu.com/questions/434660/how-can-i-disable-my-internet-connection-from-terminal
+https://superuser.com/questions/1722057/setting-down-and-up-a-working-interface-with-ip-command-causes-it-to-stop-workin
+https://en.wikipedia.org/wiki/Internet_protocol_suite
