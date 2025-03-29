@@ -130,7 +130,7 @@ Kun aletaan tarkastelemaan, millä weppipalvelimella käyttäjä on surfaillut n
 ## i) Analyysi
 
 
-**Tehtävän lopetusaika 30.3.2025 kello 22:00. Aktiivista työskentelyä yhteensä noin 3 tuntia.**
+**Tehtävän lopetusaika 29.3.2025 kello 22:00. Aktiivista työskentelyä yhteensä noin 3 tuntia.**
 
 ## Lähteet
 
