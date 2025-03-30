@@ -85,22 +85,22 @@ Valitsin oman interfaceni, mikä selvitettiin aikasemmassa kohdassa nimeksi **en
 TCP/IP mallihan rakentuu neljästä kerrokseta. **Application layer**, **Transport layer**, **Internet layer** sekä **Link layer**. Tehtävää varten kaappasin uudelleen omaa liikennettäni **enp0s3** ja kävin terminaaliin syöttämmässä **curl www.google.com**. 
 
 ### Application layer
-Hypertext Transfer Protocol, eli HTTP näyttää host osoitteen olevan avattu www.google.com ja näyttää esimerkiksi source sekä destination valitut portit.
+Application layer tarjoaa käytännössä verkkopalveluita suoraan käyttäjälle. Kuvassa nähdään Hypertext Transfer Protocol, eli HTTP joka näyttää host osoitteen olevan avattu www.google.com ja näyttää esimerkiksi source sekä destination valitut portit.
 
 ![K16](16.png)
 
 ### Transport layer
-Transmission Control Protocol. Näyttää esimerkiksi source ja destination portit.
+Transport layer kuljettaa tiedonsiirtoa välissä. Kuvassa nähdään Transmission Control Protocol. Näyttää esimerkiksi source ja destination portit.
 
 ![K15](15.png)
 
 ### Internet layer
-Internet Protocol Version 4. IPV4. Näyttää käytössä olevan IPV4 osoitteet molempiin suuntiin.
+Internet layer vastaa pakettien reitityksestä verkosta toiseen. Esimerkkitapauksessa nähdään Internet Protocol Version 4 eli IPv4. Kuvassa nähdään esimerkiksi käytössä olevan IPv4 osoitteet molempiin suuntiin.
 
 ![K14](14.png)
 
 ### Link layer
-Ethernet II. Näyttää MAC-osoitteet. Kuvasta voidaan esimerkiksi päätellä käytössäni oleva Realtekin valmistama verkkokortti.
+Link layer hallitsee fyysistä yhteyttä verkkojen välillä. Kuvassa nähdään Ethernet II mikä näyttää esimerkiksi laitteiden MAC-osoitteet. Kuvasta voidaan esimerkiksi päätellä käytössäni oleva Realtekin valmistama verkkokortti.
 
 ![K13](13.png)
 
