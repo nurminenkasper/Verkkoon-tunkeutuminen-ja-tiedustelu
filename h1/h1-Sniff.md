@@ -127,10 +127,25 @@ Kun aletaan tarkastelemaan, millä weppipalvelimella käyttäjä on surfaillut n
 
 ![K27](27.png)
 
+**Tauko tehtävien tekemisessä alkaen 29.3.2025 kello 21:45**
+
 ## i) Analyysi
 
+**Tehtävien tekeminen jatkuu 30.3.2025 kello 14:30**
 
-**Tehtävän lopetusaika 29.3.2025 kello 22:00. Aktiivista työskentelyä yhteensä noin 3 tuntia.**
+Analyysi osuutta varten tein laitoin kaappauksen päälle ja pingasin osoitetta www.google.com yhden kerran (Komennolla **ping -c 1 www.google.com**, jotta pakettien määrä pysyi kohtuullisena. Wireshark kaappaukseen sisältyi kokonaisuudessaan 8 pakettia ja kaikki liittyy suoritettuun pingaukseen. Kokonaisuus koostuu pääsiassa DNS protokollista.
+
+- **Paketti 1:** Kaappaus alkaa DNS kyselyllä osoitteesta 10.0.2.15 osoitteeseen 62.241.198.245, missä pyydetään www.google.com:in IPv4 osoitetta. Tämä me tiedetään, koska kyseessä on A query.
+- **Paketti 2:** Toinen paketti jatkaa DNS kyselyä osoitteesta 10.0.2.15 osoitteeseen 62.241.198.245, mutta tässä pyydetään puolestaan www.google.com:in IPv6 osoitetta. Kyseessä on AAAA query.
+- **Paketti 3:** Kolmannessa paketissa DNS kysely saa vastauksena pyydetyn IPv4 osoitteen A queryssä 216.58.211.228
+- **Paketti 4:** Neljäs paketti puolestaan sisältää DNS kyselyn vastauksen IPv6 osoitteen AAAA queryssä 2a00:1450:4026:808:2004
+- **Paketti 5 & 6:** Nämä oli itselle hieman mysteeri, mutta pienen selvittelyn jälkeen nämä ovat ping komentoon liittyvät sekvenssimuero sekä time to live arvo. Tyypillisiä tietenkin ping yhteyden lomassa, mitkä näkyy esimerkiksi myös terminaalissa kun suorittaa pingausta. Käytännössä siis annettu sekvenssinumero (tässä tapauksessa ensimmäinen ja ainoa pingaus) sekä paketin elinaika.
+- **Paketti 7 & 8:** Näissä paketeissa on kyseessä Reverse DNS prosessista, mikä tapahtuu DNS tapahtumien yhteydessä. Käytännössä prosessissa nykytään DNS-palvelimelta hostnamea, joka on yhteydessä alkuperäiseen IP-osoitteeseen.
+
+![K28](28.png)
+
+
+**Tehtävän lopetusaika 30.3.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia.**
 
 ## Lähteet
 https://askubuntu.com/questions/434660/how-can-i-disable-my-internet-connection-from-terminal
