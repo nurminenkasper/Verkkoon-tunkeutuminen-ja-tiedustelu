@@ -203,6 +203,8 @@ Ja kun tarkastellaan ngrep, wireshark sekä Apache2 logien tietoja. Nähdään e
 ![K33](33.png)
 ![K34](34.png)
 
+Apache2 lokienkin viimeinen tietue vastaa aikaisempia skanneja, kuten kellonajoista voidaan vertailla.
+
 (Karvinen 2025; Van Der Staak 2023; Nmap 2025)
 
 **Tehtävän lopetusaika 6.4.2025 kello 21:15. Aktiivista työskentelyä yhteensä noin 4 tuntia 15 minuuttia.**
