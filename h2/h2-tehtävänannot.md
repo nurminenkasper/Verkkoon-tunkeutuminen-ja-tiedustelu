@@ -83,7 +83,11 @@ Tehtävänannon kysymyksen asettelu oli itselle hieman haastava, mutta tässä k
 
 (Karvinen 2025, Nurminen 2025)
 ## d) Jäljet lokissa
-Itse lähdin tarkastelemaan Apache2 access.log tiedostoa suoraan **sudo grep -i "nmap" /var/log/apache2/access.log** komennolla. 
+Itse lähdin tarkastelemaan Apache2 access.log tiedostoa suoraan **sudo grep -i "nmap" /var/log/apache2/access.log** komennolla.
+
+- **grep** Käynnistelee itse ohjelman
+- **-i nmap** -i tekee kirjainkoosta riippumattoman ja nmap etsii "nmap" esiintymiä.
+- Loppuun vielä sijainti, eli apache2 access.log
 
 ![K8](8.png)
 
@@ -116,10 +120,63 @@ Paketit koostuu erilaisista HTTP protokollan GET, POST, OPTIONS, PROPFIND ja muu
 
 (Karvinen 2025)
 ## f) Net grep
+Tehtävää varten oli tarvetta asennella ngrep, joka löytyi suoraan Debianin repositorystä.
 
-## g) Agentti
+![K13](13.png)
 
-## h) Pienemmät jäljet
+Tarkoituksena oli siepata verkkoliikennettä ngrepillä, lähdin suorittamaan ngrep käynnistystä komennolla **sudo ngrep -d lo -i nmap**
+
+- **Ngrep** Käynnistelee itse ohjelman
+- **-d lo** Määrittelee kuunneltavan kohteen, tässä tapauksessa localhost eli lo
+- **-i nmap** -i tekee kirjainkoosta riippumattoman ja nmap etsii "nmap" esiintymiä.
+
+![K14](14.png)
+
+Porttiskannaus pyörimään ja tuloksia alkoi satelemaan. Yhteensä paketteja kertyi 3045, joista 54 kappaletta vastasi syötteeseen nmap.
+
+![K17](17.png)
+![K15](15.png)
+![K16](16.png)
+
+Mielestäni tulokset vastaavat esimerkiksi Wiresharkin tuloksia kattavuudeltaan, itse en päällisin puolin huomaa mitään poikkeavaa mitä en Wiresharkista tai Apache2 logeista löytäisi. Analysoidaan hieman kummiskin:
+
+- **T**: Kyseessä on TCP paketti.
+- **127.0.0.1:50578 - > 127.0.0.1:631**: Paikallisen koneen ja nmap välinen liikenne.
+- **[AP]**: Tälle en löytänyt varsinaista vahvistusta, mutta ilmeisesti kyseessä on A = ACK-lippu ja P = PUSH-lippu?
+- **#2199**: Siepatun paketin numero.
+- **GET /.git/HEAD HTTP / 1.1**: GET-pyyntö, pyydetty polku sekä HTTP protokollan versio
+- **Connection : close**: HTTP kertoo palvelimelle, että yhteys tulee sulkea
+- **User - Agent : Mozilla / 5.0 ( compatible ; Nmap Scripting Engine ; https://nmap.org/book/nse.html )**: Pyynnön tekijä
+- **Host : localhost : 631**: Pyynnön kohde ja portti, eli localhost.
+
+(Karvinen 2025; Haiqus 2021)
+## g) Agentti & h) Pienemmät jäljet
+Skriptejä hyödyntäen pystytään muuttamaan porttiskannatessa agenttia niin, että saadaan nmap näyttämään muulta kuin mitä se todellisuudessa on. Tarkastelin alkuun hieman, millaisia skriptejä on nmapille olemassa komennolla **dpkg --listfiles nmap-common**
+
+![K18](18.png)
+![K19](19.png)
+
+Tiedostoja, missä nmap on nimettynä löytyy hurja määrä, mutta joukossa oli myös skriptejä. Tarkastellaan tarkemmin, mitä skriptejä on tarjolla. **dpkg --listfiles nmap-common |grep http-title**.
+
+![K20](20.png)
+![K21](21.png)
+
+**http-title.nse** skripti näyttää redirektaavan 5 kappaletta http osotteita? Ihan tarkkaan en ymmärtänyt, mutta tämä ei ole ainakaan tarpeellinen tämän tehtävän kannalta vaan tarkastellaan hieman tarkemmin löytyisikö jotain agent liittyvää komennolla **dpkg --listfiles nmap-common |grep agent**.
+
+![K22](22.png)
+![K23](23.png)
+
+**http-useragent-tester.nse** skripti näyttää hyödyntävän User-Agent headereita niin, että voidaan itse asettaa skriptin avulla sopiva agentti piilottamaan nmap hakutuloksista. Tero olikin jo sivuillansa antanut esimerkin käytöstä ja lähdin toteuttamaan sitä lisäämällä scriptin alkuperäiseen nmap porttiskannaus komentooni.
+
+![K24](24.png)
+
+Wireshark tuloksista huomataan, että vaikka paketteja saatiin yhteensä **2998** kappaletta, niistä filtteröimällä enään kahdesta löytyy joku viittaus **nmap**. Kun tarkastellaan esimerkiksi yhden näistä paketeista sisältöä Wiresharkin Application Layerillä, nähdään miten User-Agent on muuttunut meidän antaman syötteen **"BSD experimental on XBox350 alpha (emulated on Nokia 3110)"** muotoon. Ainoa viittaus nmap löytyy tapahtumasta "nmaplowercheck...".
+
+![K25](25.png)
+
+Ja kun käydään tarkastelemassa Apache2 logitietoja, sama teema toistuu myös siellä. Logeista nähdään miten sinne on ilmestynyt enään yksi kappale nmap sisältäviä tietoja.
+
+![K26](26.png)
 
 ## i) Hieman vaikeampi
 
@@ -139,6 +196,8 @@ Nurminen 2025. H1 Kybertappoketju. GitHub. Luettavissa: https://github.com/nurmi
 QuickRef 2025. Grep cheatsheet. Quickref.me. Luettavissa: https://quickref.me/grep.html Luettu 6.4.2025
 
 Wikipedia 2025. WebDAV. Luettavissa: https://en.wikipedia.org/wiki/WebDAV Luettu 6.4.2025
+
+Haiqus 2021. Introduction to ngrep. Coderwall. Luettavissa: https://coderwall.com/p/zqulaw/introduction-to-ngrep Luettu 6.4.2025
 
 
 
