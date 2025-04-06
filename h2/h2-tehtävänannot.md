@@ -178,9 +178,32 @@ Ja kun käydään tarkastelemassa Apache2 logitietoja, sama teema toistuu myös 
 
 ![K26](26.png)
 
+(Karvinen 2025)
 ## i) Hieman vaikeampi
+Lähdin selvittelemään, että miten viimeisimmästä porttiskannauksesta saataisiin vielä kyseinen **"nmaplowercheck"** piilotettua. Tero olikin vinkannut, että tarpeellista on muokata /usr/share/nmap sisältä löytyvää tiedostoa. Googlettamalla yhdsestä [artikkelista](https://infosecwriteups.com/evading-detection-while-using-nmap-69633df091f3) selvisi, että kyseessä on /nselib/http.lua, mitä on tarkoitus lähteä muokkaamaan. Löysin samalla nmap:in GitHub sivustolta kyseisen nmaplowercheck koodin, mikä on "**"The URLs used to check 404s"** toiminto. Grep komennolla löydetään se myös kansiosta löydetystä tiedostosta.
 
-**Tehtävän lopetusaika X.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
+![K27](27.png)
+![K28](28.png)
+
+**Sudoedit** komennolla tiedosto auki ja rivi etsintään, mikä löytyikin kuten Grep meille jo tiesi kertoa.
+
+![K29](29.png)
+
+Itse muokkasin **"nmaplowercheck"** tilalle **"testi"** ja tallensin.
+
+![K30](30.png)
+
+Seuraavaksi lähdin suorittamaan täysin samaa nmap skannausta mitä edellisessä tehtävässä.
+
+![K31](31.png)
+
+Ja kun tarkastellaan ngrep, wireshark sekä Apache2 logien tietoja. Nähdään ettei nmap ilmeenny enää lainkaan syötteessä, vaikka paketteja saapuukin skannauksessa perille.
+
+![K32](32.png)
+![K33](33.png)
+![K34](34.png)
+
+**Tehtävän lopetusaika 6.4.2025 kello 21:15. Aktiivista työskentelyä yhteensä noin 4 tuntia 15 minuuttia.**
 
 ## Lähteet
 Karvinen T 2025. h2 Tehtävänannot. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/ Luettu 6.4.2025
@@ -199,5 +222,7 @@ Wikipedia 2025. WebDAV. Luettavissa: https://en.wikipedia.org/wiki/WebDAV Luettu
 
 Haiqus 2021. Introduction to ngrep. Coderwall. Luettavissa: https://coderwall.com/p/zqulaw/introduction-to-ngrep Luettu 6.4.2025
 
+Van Der Staak 2023. Evading Detection while using nmap. Luettavissa: https://infosecwriteups.com/evading-detection-while-using-nmap-69633df091f3 Luettu 6.4.2025
 
+Nmap 2025. GitHub. Luettavissa: https://github.com/nmap/nmap/blob/635675b1430a89e950f71112d3bfc74feee4b19a/nselib/http.lua#L2600 Luettu 6.4.2025
 
