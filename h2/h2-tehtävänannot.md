@@ -75,11 +75,46 @@ Tuloksia voidaan analysoida hieman tarkemmin, mutta etenkin 80/TCP oli pyydetty 
 
 (Karvinen 2025; Nurminen 2025)
 ## c) Skriptit
+Kuten jo aikaisemmassa tehtävässä purin hieman -A komennon ajatusta, mutta lisäämällä -A syötteeseen saadaan käyttöön seuraavat elementit: **OS detection, version detection, script scanning ja traceroute**
 
+Tehtävänannon kysymyksen asettelu oli itselle hieman haastava, mutta tässä kuitenkin ilmeisesti haettiin myös 80/TCP portin syötteen skriptejä?
+- **http-server-header**: "Apache/2.4.62 (Debian)", paljastaa siis palvelimet ohjelmiston sekä version.
+- **http-title**: "Apache2 Debian Default Page: It works", paljastaa verkkosivun title-elementin sisällön
+
+(Karvinen 2025, Nurminen 2025)
 ## d) Jäljet lokissa
+Itse lähdin tarkastelemaan Apache2 access.log tiedostoa suoraan **sudo grep -i "nmap" /var/log/apache2/access.log** komennolla. 
 
+![K8](8.png)
+
+Vastauksia oli aika kattavasti, mutta kuvassa muutama esimerkki mitä löysin. **Nmap** esiintyy näissä "Nmap Scripting Engine" muodossa.
+
+- **127.0.0.1**: Jälleen tämä on IP-osoitteeni, eli localhost missä Apache2 pyörii.
+- **Päivämäärä ja aika**: Kuvaa tapahtuman aikaa.
+- **PROPFIND / HTTP/1.1**: Kysessä on PROPFIND metodi, mitä käytetään WebDAV protokollassa tiedostojen ja kansioiden ominaisuuksien hakemiseen. HTTP 1.1 on protokolla, mitä käytettiin.
+- **405**: HTTP-statuskoodi, 405 tarkoittaa, että metodi ei ole sallittu.
+- **519**: Bytes Sent. Palvelimen lähettämän vastauksen tavujen kokonaismäärä.
+- **-**: Referer kenttä, eli näyttää sivun URL, jolla käyttäjä tuli pyydetylle sivulle.
+- **Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html** User Agent. Tunnistaa mistä ohjelmistosta, eli selaimesta tässä tapauksessa pyyntö on tullut ja tästä nähdäänkin että pyynnön on tehnyt porttiskannatessa Nmap.
+
+(Karvinen 2025; QuickRef; Wikipedia)
 ## e) Wire sharking
+Wireshark käyntiin ja Loopback:lo valinnaksi, sillä se vastaa omaa Localhostia mitä skannataan pian. 
 
+![K9](9.png)
+
+Sieppaus käynnissä ja porttiskannaus samalla methodilla kuin aikaisemmin, eli **sudo nmap -T4 -A localhosts**. Paketteja kertyi Wiresharkiin kokonaisuudessaan 2985 kappaletta. Seuraavaksi tallensin pcap tiedoston.
+
+![K10](10.png)
+![K11](11.png)
+
+Tarkoitus oli tarkastella tarkemmin niitä paketteja, mistä filtteröimällä löytyy yhteensä 54 kappaletta paketteja mitkä sisältää "**nmap**". Nämähän pystyi filtteröimään lisäämällä kenttään **frame contains "nmap"**.
+
+![K12](12.png)
+
+Paketit koostuu erilaisista HTTP protokollan GET, POST, OPTIONS, PROPFIND ja muutamasta IPP Request paketista. Teema on pääsääntöisesti sama, filtteröity nmap löytyy eri muodoissa Application Layeriltä. Pääsääntöisesti kaikki tarkastelemani sisältävät kohdan **"Nmap Scripting Engine"**.
+
+(Karvinen 2025)
 ## f) Net grep
 
 ## g) Agentti
@@ -100,5 +135,10 @@ Caltagirone, Pendergast & Betz. The Diamond Model of Intrusion Analysis. Luettav
 Dancuk M 2024. Apache Log Files: How to View, Configure & Use Them. PhoenixNAP verkkosivut. Luettavissa: https://phoenixnap.com/kb/apache-access-log Luettu 6.4.2025
 
 Nurminen 2025. H1 Kybertappoketju. GitHub. Luettavissa: https://github.com/nurminenkasper/Tunkeutumistestaus/blob/main/h1/h1-kybertappoketju.md Luettu 6.4.2025
+
+QuickRef 2025. Grep cheatsheet. Quickref.me. Luettavissa: https://quickref.me/grep.html Luettu 6.4.2025
+
+Wikipedia 2025. WebDAV. Luettavissa: https://en.wikipedia.org/wiki/WebDAV Luettu 6.4.2025
+
 
 
