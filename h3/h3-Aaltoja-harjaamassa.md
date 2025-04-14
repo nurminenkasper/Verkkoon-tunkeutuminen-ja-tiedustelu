@@ -31,7 +31,7 @@ Käytin tehtävän tekemiseen [University of Twente, Enschede - Netherland](http
 ![K1](1.png)
 ![K2](2.png)
 
-Lähetystä lähdin etsimään käyttämällä Waterfall näkymää ja valitsemalla sieltä kirkkaaksi muuttuvia kohtia. Lisäksi yritin eri vaihtoehtoja AM & FM taajuu modulaation väliltä. Lopulta päädyin kuitenkin AM-modulaation taajuudelle 15594.00kHz, mistä löytyi ilmeisesti joku Lontoosta tuleva lähetys, mutta tarkkaa mainintaa ei vartin kuuntelulla saanut mikä kanava tarkalleen kyseessä. Lähetyksessä puhuttiin sijoittamisesta ja inflaatiosta englanniksi, tämän jälkeen tuli kattava sporttiuutisia.
+Lähetystä lähdin etsimään käyttämällä Waterfall näkymää ja valitsemalla sieltä kirkkaaksi muuttuvia kohtia. Lisäksi yritin eri vaihtoehtoja AM & FM taajuu modulaation väliltä. Lopulta päädyin kuitenkin AM-modulaation taajuudelle 15594.00kHz, mistä löytyi ilmeisesti joku Lontoosta tuleva lähetys, mutta tarkkaa mainintaa ei vartin kuuntelulla saanut mikä kanava tarkalleen kyseessä. Lähetyksessä puhuttiin sijoittamisesta ja inflaatiosta englanniksi, tämän jälkeen tuli kattava paketti sporttiuutisia.
 
 ![K3](3.png)
 
