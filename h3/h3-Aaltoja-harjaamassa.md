@@ -87,7 +87,7 @@ Seuraavaa tehtävää varten latailin wgetillä Teron URH ohjelmalla nauhoittama
 
 ![K11](11.png)
 
-Tiedoston päätehän oli .complex16s ja Teron [vinkeistä](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/) löytyi ohjeena, että vain tiedoston nimeä muuttamalla pitäisi homma saada toimimaan. Lähdin siis työstämään `mv` komentoa hyödyntäen. Tiedossa oli myös, että tiedoston nmessä pitää olla oikea taajuus sekä näytteenottotaajuus eroteltuna alaviivalla.
+Tiedoston päätehän oli .complex16s ja Teron [vinkeistä](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/#h3-aaltoja-harjaamassa) löytyi ohjeena, että vain tiedoston nimeä muuttamalla pitäisi homma saada toimimaan. Lähdin siis työstämään `mv` komentoa hyödyntäen. Tiedossa oli myös, että tiedoston nmessä pitää olla oikea taajuus sekä näytteenottotaajuus eroteltuna alaviivalla.
 
 ![K12](12.png)
 
@@ -107,18 +107,65 @@ Tehtävänannossa oli tarkoitus analysoida sisältöä, mutta mielestäni näytt
 
 (Karvinen 2025)
 ## e) Ultimate
+Seurailin [Teron ohjeita](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/#h3-aaltoja-harjaamassa) URH asentamiseen ja aloitin lataamalla tehtävän suorittamiseen liittyvän [näytteen](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/1-on-on-on-HackRF-20250412_113805-433_912MHz-2MSps-2MHz.complex16s) ja asentamalla pipx
 
+![K16](16.png)
 
+pipx hyödyntäen oli tarkoitus asentaa urh
+
+![K17](17.png)
+
+Kuten virheilmoitutksesta jo huomataan, PATH on päivitettävä kohdilleen.
+
+![K18](18.png)
+
+Ei muuta kuin terminaali uudestaan käytiin ja ohjelma käyntiin komennolla `urh`
+
+![K20](20.png)
+
+Yläkulmasta **file -> open file** ja valitsemaan sopivaa ladattua kohdetta hakemistosta.
+
+![K21](21.png)
+
+(Karvinen 2025; Jopoh1 2025)
 ## f) Yleiskuva
+Yleiskuvaa lähdin tarkastelemaan ensin valitsemalla koko janan pituuden ja katsomalla kuinka monta bittiä on esimerkiksi valittuna. Pituudeksi näytteelle löydettiin heti 5.49sekunttia.
 
+![K23](23.png)
+
+Tämän jälkeen löysinkin yläreunasta **i = info** nappulan, mistä avatusta näkymästä löytyi aika kattava määrä sopivaa dataa yleiskatsausta varten.
+
+![K22](22.png)
+
+**Koko:** 10.47mb
+**Nauhoitus päivämäärä ja kellonaika:** 13.4.2025 17:13:32
+**Näytteenottotaajuus:** 1,0M
+**Pituus:** 5,49s
+
+(Karvinen 2025)
 ## g) Bittistä
+Lähdin toteuttamaan demulointia niin, että käytin ensin **Autodetect parameters** nappia. Modulaatioksi valikoitui ASK, koska se näytti oikealta silmääni. Lähdin tarkastelemaan, vastaako yksi bitti mikrosekunneissa samaa aikaa kuin Samples/Symbol kohta. Tämä tieto tuli [hubmartin videosta](https://www.youtube.com/watch?v=sbqMqb6FVMY&t=199s)
 
-**Tehtävän lopetusaika X.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
+![K24](24.png)
 
+Näyttää oikealta. Tämän jälkeen muutin alareunasta **Signal View** kohdasta **Demodulated** ja tarkistelin vielä liikkuuko yksi bitti kerrallaan 1 ja 0 kohdalla sopivissa sykleissä eli näyttääkö toinen luvuista eri janaa mitä toinen.
+
+![K26](26.png)
+![K27](27.png)
+
+Näytti silmääni osaamisen perusteella oikealta. Tämän jälkeen muutin vielä datan tiedon näytön Hex muotoon ja valitsin yhden riveistä, joka näytti valitsevan yhden toistoalueen. Rivit näytti muutenkin kohtuu samanlaiselta, joten ajattelin tämän riittävän moduloinniksi?
+
+![K28](28.png)
+
+Mielestäni siis oikea modulaatio on **ASK** ja yhden raakabitin aika on **522,00µs**. Ajallista vertausta lähdin hakemaan sillä, että kun valo kulkee 300 metriä mikrosekunnissa niin 522 mikrosekunnissa valo kulkisi noin 156 kilometriä.
+
+**Tehtävän lopetusaika 15.4.2025 kello 20:40. Taukoja ja muiden tekoa runsaasti välissä. Aktiivista työskentelyä yhteensä noin 8 tuntia 30 minuuttia.**
+
+(Karvinen 2025; hubmartin 2019 
 ## Lähteet
-Karvinen T 2025. h3 Aaltoja harjaamassa. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/ Luettu 13.4.2025
+Karvinen T 2025. h3 Aaltoja harjaamassa. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/#h3-aaltoja-harjaamassa Luettu 13.4.2025
 
-hubmartin2019. Universal Radio Hacker SDR Tutorial on 433 MHz radio plugs. Youtube. Katsottavissa: https://www.youtube.com/watch?v=sbqMqb6FVMY&t=199s Katsottu 13.4.2025
+hubmartin 2019. Universal Radio Hacker SDR Tutorial on 433 MHz radio plugs. Youtube. Katsottavissa: https://www.youtube.com/watch?v=sbqMqb6FVMY&t=199s Katsottu 13.4.2025
 
 Cornelius 2022. Decode 433.92 MHz weather station data. Luettavissa: https://www.onetransistor.eu/2022/01/decode-433mhz-ask-signal.html Luettu 13.4.2025
 
@@ -131,4 +178,3 @@ Merbanan 2025. rtl_433 GitHub Repository. Luettavissa: https://github.com/merban
 Debian 2025. Package: libsoapysdr-dev. Luettavissa: https://packages.debian.org/buster/libsoapysdr-dev Luettu 13.4.2025
 
 Jopohl 2025. urh GitHub Repository. Luettavissa: https://github.com/jopohl/urh?tab=readme-ov-file Luettu 13.4.2025
-
