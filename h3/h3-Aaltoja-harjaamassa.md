@@ -37,8 +37,30 @@ Lähetystä lähdin etsimään käyttämällä Waterfall näkymää ja valitsema
 
 (Karvinen 2025; WebSDR.org; Amateur radio club ETGD)
 ## b) rtl_433
+Tehtävänanto oli asennella rtl_433 ja kun en Kalia tai Debian SID käyttänyt niin repositorystä ohjelmaa ei suoraan löytynyt. Hain alkuun ohjelman GitHub repositorystä wget komennolla.
 
+![K4](4.png)
+
+Tämän jälkeen paketin purkaminen aunpack komennolla.
+
+![K5](5.png)
+
+GitHubissa oli maininta, että ohjelmaa varten on asenneltava suoraan Debianin paketinhallinnasta muutamat tarpeelliset kirjastot
+
+![K6](6.png)
+
+Seuraavaksi testikäynnistelyt ohjelmalla, mutta sieltä puskikin erroria. libSoapySDR kirjasto jäänyt puuttumaan, joten asennellaan vielä se.
+
+![K7](7.png)
+
+        ./rtl_433
+Käynnistelee ohjelman, joten ei muuta kuin homma testiin. 
+
+![K8](8.png)
+
+(Karvinen 2025; Merbanan 2025; Debian 2025)
 ## c) Automaattinen analyysi
+
 
 ## d) Too compex 16?
 
