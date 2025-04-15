@@ -159,7 +159,7 @@ Näytti silmääni osaamisen perusteella oikealta. Tämän jälkeen muutin viel�
 
 Mielestäni siis oikea modulaatio on **ASK** ja yhden raakabitin aika on **522,00µs**. Ajallista vertausta lähdin hakemaan sillä, että kun valo kulkee 300 metriä mikrosekunnissa niin 522 mikrosekunnissa valo kulkisi noin 156 kilometriä.
 
-**Tehtävän lopetusaika 15.4.2025 kello 20:40. Taukoja ja muiden tekoa runsaasti välissä. Aktiivista työskentelyä yhteensä noin 8 tuntia 30 minuuttia.**
+**Tehtävän lopetusaika 15.4.2025 kello 20:40. Taukoja ja muiden töiden tekoa runsaasti välissä. Aktiivista työskentelyä yhteensä noin 8 tuntia 30 minuuttia.**
 
 (Karvinen 2025; hubmartin 2019 
 ## Lähteet
