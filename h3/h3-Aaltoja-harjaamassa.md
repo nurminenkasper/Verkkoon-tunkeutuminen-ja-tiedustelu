@@ -83,8 +83,31 @@ Itse saan tästä kolmen kohdan yhtälöstä semmoisen käsityksen, että KlikAa
 
 (Karvinen 2025; Merbanan 2025)
 ## d) Too compex 16?
+Seuraavaa tehtävää varten latailin wgetillä Teron URH ohjelmalla nauhoittaman [näytteen](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/Recorded-HackRF-20250411_183354-433_92MHz-2MSps-2MHz.complex16s) mikä oli tarkoitus saada toimimaan rtl_433 kanssa.
 
+![K11](11.png)
+
+Tiedoston päätehän oli .complex16s ja Teron [vinkeistä](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/) löytyi ohjeena, että vain tiedoston nimeä muuttamalla pitäisi homma saada toimimaan. Lähdin siis työstämään `mv` komentoa hyödyntäen. Tiedossa oli myös, että tiedoston nmessä pitää olla oikea taajuus sekä näytteenottotaajuus eroteltuna alaviivalla.
+
+![K12](12.png)
+
+Testiä ajoon eikä lähtenyt millään toimimaan.
+
+![K13](13.png)
+
+Hetken aikaa pähkäilin ja huomasin, että alkuperäinen näytteenottotaajuus on ollut 2MHz eli 2000k, eikä 1000k mitä syötin Teron vinkeistä... Uutta nimeämistä kehiin, missä muutetaan 1000k -> 2000k.
+
+![K14](14.png)
+
+Ja nyt homma rokkaa.
+
+![K15](15.png)
+
+Tehtävänannossa oli tarkoitus analysoida sisältöä, mutta mielestäni näytteen sisältö oli täysin sama mitä tehtävässä c)? Latasin vielä jälkeenpäin tehtävän näytteen uudestaankin ja nimesin, että avasinhan varmasti oikean tiedoston ja kyllä se sisältö samalta näytti. Analysointi löytyy siis ylempää tehtävästä c).
+
+(Karvinen 2025)
 ## e) Ultimate
+
 
 ## f) Yleiskuva
 
