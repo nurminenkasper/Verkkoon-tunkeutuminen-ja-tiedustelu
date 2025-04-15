@@ -60,8 +60,28 @@ Käynnistelee ohjelman, joten ei muuta kuin homma testiin.
 
 (Karvinen 2025; Merbanan 2025; Debian 2025)
 ## c) Automaattinen analyysi
+Tehtävässä oli analysoitava Teron toimittamaa [näytettä](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/Converted_433.92M_2000k.cs8) rtl_433 ohjelmalla. Luonnollisesti ensin oli haettava wget komenonlla Teron sivuilta kyseinen tiedosto.
 
+![K9](9.png)
 
+Seuraavaksi ohjelmalla auki tiedosto suoraan terminaalissa. Ohjelmaa suoritin komennolla `./rtl_433 -r Converted_433.92M_2000k.cs8`. Tästä syötteestä -r toimittaa roolia, että dataa luetaan suoraan syötetystä tiedostosta eikä lähettimestä.
+
+![K10](10.png)
+
+Näytteessä on yhteensä 12 kohtaa, joista kolmessa on yhtenäisyyksiä. Käytännössä kyseessä on tapahtuma, mikä toistetaan neljään kertaan. Analysoidaan kuitenkin hieman tarkemmin:
+
+- **Time**: @0.xxxx - Viittaa aikaan, koska signaali on vastaanotettu
+- **Model**: Laitemalli. KlikAanKlikUit-Switch, Proove-Security sekä Nexa-Security.
+- **id & House Code**: 8785315, löytyy useampaan kertaan
+- **Unit**: Laitteen numero. Löytyy esimerkiksi 0 ja 3
+- **Channel**: Käytetty kanava, tässä tapauksessa 3
+- **Command**: Lähetetty komento, tässä tapauksessa off
+- **Dim & Dim Value**: Himmenykseen liittyvä komento ja himmennykseen liittyvä arvo?
+- **Group**: Jonkin sortin ryhmätunnus?
+
+Itse saan tästä kolmen kohdan yhtälöstä semmoisen käsityksen, että KlikAanKlikUit-Switch on jonkin sortin kytkin mitä painetaan ja se lähettää Off-komennon, jonka seurauksena Proove- ja Nexa-turvalaitteet lähettää signaaleja joiden mukaan tila tulisi olla off? Nopealla googlauksella KlikAanKlikUnit, Nexa sekä Proove on kaikki jonkin sortin kotiäly/kytkin yms valmistajia. KlikAanKlikUnit-Switch ainakin lähettää id numeron, joka on lopulta sama kuin Proove-Security ja Nexa-Securityn House Code. Tämä toistuu neljästi, joten kytkintä taidetaan painaa neljä kertaa tallenteessa.
+
+(Karvinen 2025; Merbanan 2025)
 ## d) Too compex 16?
 
 ## e) Ultimate
