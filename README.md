@@ -4,7 +4,7 @@ Homework reports for Haaga-Helia Network Attacks and Reconnaissance course. Repo
 ## Tehtävä raportit
 - [Viikko 1](h1/h1-Sniff.md)
 - [Viikko 2](h2/h2-tehtävänannot.md)
-- [Viikko 3]
+- [Viikko 3](h3/h3-Aaltoja-harjaamassa.md)
 - [Viikko 4]
 - [Viikko 5]
 - [Viikko 6]
