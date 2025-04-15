@@ -161,7 +161,7 @@ Mielestäni siis oikea modulaatio on **ASK** ja yhden raakabitin aika on **522,0
 
 **Tehtävän lopetusaika 15.4.2025 kello 20:40. Taukoja ja muiden töiden tekoa runsaasti välissä. Aktiivista työskentelyä yhteensä noin 8 tuntia 30 minuuttia.**
 
-(Karvinen 2025; hubmartin 2019 
+(Karvinen 2025; hubmartin 2019) 
 ## Lähteet
 Karvinen T 2025. h3 Aaltoja harjaamassa. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/#h3-aaltoja-harjaamassa Luettu 13.4.2025
 
