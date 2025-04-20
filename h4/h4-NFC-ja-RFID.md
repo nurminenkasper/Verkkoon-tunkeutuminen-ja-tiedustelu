@@ -73,6 +73,8 @@ Tapauksen tutkijat eivät ole tietoisia tapauksista, joissa haavoittuvuutta olis
 **Tehtävän lopetusaika 20.4.2025 kello 19:30. Aktiivista työskentelyä yhteensä noin 1 tuntia 00 minuuttia.**
 
 ## Lähteet
+Haaga-Helia Moodle. Verkkoon tunkeutuminen ja tiedustelu - ICI013AS3A-3001 - 2025p4 - Tero ja Lari. 4. NFC ja RFID.
+
 Sarah Amster 2021. RFID (radio frequency identification). Luettavissa: https://www.techtarget.com/iotagenda/definition/RFID-radio-frequency-identification Luettu 20.4.2025
 
 CardLogix. Application Protocol Data Unit (APDU). Luettavissa: https://www.cardlogix.com/glossary/apdu-application-protocol-data-unit-smart-card/ Luettu 20.4.2025
