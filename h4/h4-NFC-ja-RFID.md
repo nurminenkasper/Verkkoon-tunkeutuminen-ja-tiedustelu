@@ -60,10 +60,21 @@ Tutkin vielä tarkemmin asiaa artikkeleista ja tarkensin tietoja, mitä ChatGPT 
 
 (ChatGPT-4; CardLogix)
 ## c) Tutki ja kerro minkä mielenkiintoisen RFID hakkerointi uutiset löysit
+Löysin uutisen [Wired sivustolta](https://www.wired.com/story/saflok-hotel-lock-unsaflok-hack-technique/), missä hakkerit löysivät vuonna 2022 vakavan haavoittuvuuden Dormakaban valmistamissa Saflok-merkkisissä RFID-lukoissa mitä käytettiin ainakin 3 miljoonassa hotellissa maailmanlaajuisesti.
 
-**Tehtävän lopetusaika 20.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
+Haavoittuvuudessa käytetty "Unsaflok" tapa mahdollisti minkä tahansa huoneen oven avaamisen kahdella tekniikkaa hyödyntävällä avainkortilla. Hyökkäys perustui MIFARE Classic -korttien tunnettuun haavoittuvuuteen ja Dormakaban salausjärjestelmän heikkouteen. Hyökkäyken toteuttamiseen tarvittiin vain käytetty tai vanhentunut avainkortti hotellista, RFID-lukulaite (kuten Proxmark3 tai Flipper Zero) ja Saflok-järjestelmän tuntemusta. Ensimmäinen kortti muokkaa lukon tietoja ja toinen kortti avaa lopulta oven.
+
+Dormakaba aloitti päivityksen jakelun marraskuussa 2023 ja maaliskuuhun 2024 mennessä oli päivitetty vasta 36% lukoista. Lukot eivät ole yhteydessä internettiin, joten päivitysprosessi vaatii manuaalisen päivityksen huonekohtaisesti.
+
+Tapauksen tutkijat eivät ole tietoisia tapauksista, joissa haavoittuvuutta olisi hyödynnetty, mutta artikkelissa korostetaan, että haavoittuvuus on saattanut olla olemassa jo vuosikymmeniä ja heidän tavoite on lisätä tietoisuutta ja kannustaa hotelleita päivittämään järjestelmänsä.
+
+(Andy Greenberg 2024)
+
+**Tehtävän lopetusaika 20.4.2025 kello 19:30. Aktiivista työskentelyä yhteensä noin 1 tuntia 00 minuuttia.**
 
 ## Lähteet
 Sarah Amster 2021. RFID (radio frequency identification). Luettavissa: https://www.techtarget.com/iotagenda/definition/RFID-radio-frequency-identification Luettu 20.4.2025
 
 CardLogix. Application Protocol Data Unit (APDU). Luettavissa: https://www.cardlogix.com/glossary/apdu-application-protocol-data-unit-smart-card/ Luettu 20.4.2025
+
+Andy Greenberg 2024. Hackers Found a Way to Open Any of 3 Million Hotel Keycard Locks in Seconds. Luettavissa: https://www.wired.com/story/saflok-hotel-lock-unsaflok-hack-technique/ Luettu 20.4.2025
