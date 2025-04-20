@@ -31,18 +31,34 @@ Itse lähdin kysymään tarkemmin ChatGPT-4 versiolta tarkemmin aiheesta. Tarkal
 
 APDU-komennon rakenne koostuu pääasiassa seuraavista asioista.
 
-+------+------+------+-------+--------+-----------+---------+
-| CLA  | INS  | P1   | P2    | Lc     | Data      | Le      |
-+------+------+------+-------+--------+-----------+---------+
-Kenttä | Tarkoittaa | Koko (tavua) | Kuvaus
-CLA | Class byte | 1 | Protokollaluokka (voi määrittää esim. salauksen)
-INS | Instruction byte | 1 | Mitä toimintoa pyydetään (esim. SELECT, READ)
-P1 | Parametri 1 | 1 | Lisätietoa toiminnosta
-P2 | Parametri 2 | 1 | Toinen lisäparametri
-Lc | Data length | 0 tai 1 | Kuinka monta tavua dataa seuraa (jos dataa on)
-Data | Data | 0–255 | Lähetettävä data
-Le | Expected Length | 0 tai 1 | Kuinka monta tavua odotetaan vastaukseksi
+- **Header:** Headerin alta löytyy CLA, INS, P1, P2
+- **Body:** Bodyn alta löytyy Lc, Data Field, Le
 
+Tarkemmin kun tarkastellaan vielä rakennetta niin:
+
+- **CLA - Instruction class:** Protokollaluokka, voi määrittää esim salauksen
+- **INS - Instruction code:** Mitä toimintoa pyydetään (esim. SELECT, READ)
+- **P1 - Instruction parameter 1:** Lisätietoa toiminnosta
+- **P2 - Instruction parameter 2:** Toinen lisäparametri
+- **Lc - Data lenght:** Kuinka monta tavua dataa seuraa, jos sitä on
+- **Command data:** Lähetettävä data
+- **Le - Expected Lenght:** Kuinka monta tavua odotetaan vastaukseksi
+
+ChatGPT antaa esimerkiksi SELECT-komennon, missä on otettu AID eli Application ID:
+
+00 A4 04 00 07 A0 00 00 00 03 10 10 00
+
+- 00 = CLA (ISO 7816 standardi)
+- A4 = INS (SELECT-komento)
+- 04 = P1 (valitaan sovellus ID:llä)
+- 00 = P2 (ei mitään erityistä)
+- 07 = Lc (7 tavua dataa)
+- A0 00 00 00 03 10 10 = AID (Visa-kortin tyypillinen tunniste)
+- 00 = Le (paljonko dataa odotetaan takaisin)
+
+Tutkin vielä tarkemmin asiaa artikkeleista ja tarkensin tietoja, mitä ChatGPT kertoi.
+
+(ChatGPT-4; CardLogix)
 ## c) Tutki ja kerro minkä mielenkiintoisen RFID hakkerointi uutiset löysit
 
 **Tehtävän lopetusaika 20.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
@@ -50,3 +66,4 @@ Le | Expected Length | 0 tai 1 | Kuinka monta tavua odotetaan vastaukseksi
 ## Lähteet
 Sarah Amster 2021. RFID (radio frequency identification). Luettavissa: https://www.techtarget.com/iotagenda/definition/RFID-radio-frequency-identification Luettu 20.4.2025
 
+CardLogix. Application Protocol Data Unit (APDU). Luettavissa: https://www.cardlogix.com/glossary/apdu-application-protocol-data-unit-smart-card/ Luettu 20.4.2025
