@@ -94,10 +94,10 @@ Mininet ympäristön kanssa on tullut taisteltua enemmän tai vähemmän viimeis
 
 Käytännössä en saa verkkolaitetta toimimaan / osoitetta mininetille. Kaikki VM Waren asetuksen on käyty ja kokeiltu läpi. Todennäköisesti käyttäjässä on vika ja löydän ratkaisun jostain vertaisarvioinnista, mutta palaan tämän tehtävän pariin vielä myöhemmin, kun saan Mininet ympäristön toimimaan.
 
-![M1](mininet/1.png)
-![M2](mininet/2.png)
-![M3](mininet/3.png)
-![M4](mininet/4.png)
+![M1](Mininet/1.png)
+![M2](Mininet/2.png)
+![M3](Mininet/3.png)
+![M4](Mininet/4.png)
 
 **Tehtävän lopetusaika 6.5.2025 kello 21:00. Enemmän tai vähemmän aktiivista työskentelyä yhteensä noin 15 tuntia 00 minuuttia. Tästä ajasta suurin osa Mininetin kanssa taistellessa**
 
