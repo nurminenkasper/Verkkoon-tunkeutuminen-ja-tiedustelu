@@ -90,9 +90,16 @@ Nähdäänkin käytetty phishlets, käyttäjänimi, salasana, tokeni, ip-osoite 
 
 (Kgretzky 2025; Kali.org 2025; Evilginx; Cybertech-Arena 2025)
 ## b) Sinulla on käytössäsi mininet ympäristö. Luo ympäristö, jossa voit tehdä TCP SYN-Flood hyökkäyksen.
+Mininet ympäristön kanssa on tullut taisteltua enemmän tai vähemmän viimeisen viikon aikana. Itsellä meni ehkä tunnilla tai jaetusta ohjeistuksesta jotain ohi, mutta kaikkea maan ja taivaan väliltä on kokeiltu ympäristön käyntiin saamiseksi, mutta ei vain toimi. Opettajalle (Larille) laitoin tästä myös sähköpostia, enkä saanut hommaa skulaamaan riittävän ajoissa tehtävien palautukseen mennessä. 
 
+Käytännössä en saa verkkolaitetta toimimaan / osoitetta mininetille. Kaikki VM Waren asetuksen on käyty ja kokeiltu läpi. Todennäköisesti käyttäjässä on vika ja löydän ratkaisun jostain vertaisarvioinnista, mutta palaan tämän tehtävän pariin vielä myöhemmin, kun saan Mininet ympäristön toimimaan.
 
-**Tehtävän lopetusaika X.5.2025 kello XX:XX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
+![M1](mininet/1.png)
+![M2](mininet/2.png)
+![M3](mininet/3.png)
+![M4](mininet/4.png)
+
+**Tehtävän lopetusaika 6.5.2025 kello 21:00. Enemmän tai vähemmän aktiivista työskentelyä yhteensä noin 15 tuntia 00 minuuttia. Tästä ajasta suurin osa Mininetin kanssa taistellessa**
 
 ## Lähteet
 Haaga-Helia Moodle. Verkkoon tunkeutuminen ja tiedustelu - ICI013AS3A-3001 - 2025p4 - Tero ja Lari. 5. Laboratorio- ja simulaatioympäristöt hyökkäyksissä
