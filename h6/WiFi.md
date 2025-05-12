@@ -12,6 +12,21 @@
 **Tehtävän aloitusaika 9.5.2025 kello 07:00**
 
 ## a & b) Tutustu wifi challenge lab 2.1 harjoitus ympäristöön. Kirjoita raportti siitä mitä opit ja mitkä asia yllättivät sinut kun tutustuit harjoitukseen.
+Asentelin ja käynnistelin VirtualBox imagella virtuaalikoneen tehtävää varten. Tehtävästä en raportoi varsinaista Walktrough tyyppistä raporttia, koska semmoinen löytyy jo tehtävän [valmistajan](https://r4ulcl.com/posts/walkthrough-wifichallenge-lab-2.0/) toimesta. Keskityn tässä raportissa avaamaan, mitä relevanttia opin jokaisesta eri harjoituksesta.
+
+### Recon
+
+### OPN
+
+### WEP
+
+### PSK
+
+### SAE WPA3
+
+### Recon MGT
+
+### MGT
 
 ## c) Miten suhtautumisesi WLanin turvallisuuteen muuttui sen jälkeen kun teit harjoitukset?
 
@@ -20,3 +35,4 @@
 ## Lähteet
 Haaga-Helia Moodle. Verkkoon tunkeutuminen ja tiedustelu - ICI013AS3A-3001 - 2025p4 - Tero ja Lari. 6. WiFi
 
+https://r4ulcl.com/posts/walkthrough-wifichallenge-lab-2.0/
