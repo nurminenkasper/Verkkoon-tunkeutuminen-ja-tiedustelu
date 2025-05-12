@@ -56,7 +56,7 @@ Loppujen lopuksi tuli kuitenkin ratkottua ihan kattavasti tehtäviä. MGT ratkom
 ## c) Miten suhtautumisesi WLanin turvallisuuteen muuttui sen jälkeen kun teit harjoitukset?
 Itselle oli ehkä mielenkiintoisinta huomata, miten paljon erilaisia haavoittuvuuksia Wi-Fi verkkojen murtautumiseen voidaan käyttää. Päälimmäisenä mieleen jäi se, miten helppoa on kerätä analyysiä verkoista jo ihan muutamalla komennolla airmon-ng avulla. Jatkossa varmasti muistaa, että vahvat salasanat, laitteiden päivitykset ja eri salaustyypit on tärkeässä roolissa Wi-Fi turvallisuudessa.
 
-**Tehtävän lopetusaika 12.5.2025 kello 14:00. Enemmän tai vähemmän aktiivista työskentelyä yhteensä noin XX tuntia 00 minuuttia.**
+**Tehtävän lopetusaika 12.5.2025 kello 14:00. Enemmän tai vähemmän aktiivista työskentelyä yhteensä noin 8 tuntia 00 minuuttia.**
 
 ## Lähteet
 Haaga-Helia Moodle. Verkkoon tunkeutuminen ja tiedustelu - ICI013AS3A-3001 - 2025p4 - Tero ja Lari. 6. WiFi
