@@ -7,5 +7,7 @@ Homework reports for Haaga-Helia Network Attacks and Reconnaissance course. Repo
 - [Viikko 3](h3/h3-Aaltoja-harjaamassa.md)
 - [Viikko 4](h4/h4-NFC-ja-RFID.md)
 - [Viikko 5](h5/Laboratorio-ja-simulaatioympäristöt-hyökkäyksissä.md)
-- [Viikko 6]
-- [Viikko 7]
+- [Viikko 6](h6/WiFi.md)
+
+## Lipunryöstö (CTF)
+- Kilpailun sijoitus XXX
