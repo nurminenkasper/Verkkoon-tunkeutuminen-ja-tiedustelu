@@ -17,8 +17,10 @@ Asentelin ja käynnistelin VirtualBox imagella virtuaalikoneen tehtävää varte
 ### Recon
 Osiossa opittiin tyypillistä langattomien verkkojen tunnistamista ja tietojen keräämistä. Airmon-ng toimi tyypillisenä työvälineenä, millä etsittiin MAC osoitteita, Probeja sekä mdk4 hyödyntäen piilotettuja verkkoja. 
 
+![K4](4.png)
 
 ### OPN
+
 
 ### WEP
 
@@ -36,7 +38,6 @@ Tähän jäätiinkin lopulta valitettavasti jumiin. En saanut ratkaistua ongelma
 Loppujen lopuksi tuli kuitenkin ratkottua ihan kattavasti tehtäviä. MGT ratkominen jäi toiseen kertaan, kun paremmalla ajalla pystyn selvittelemään mistä OpenCL virhe johtui.
 
 ![K2](2.png)
-![K3](3.png)
 
 ## c) Miten suhtautumisesi WLanin turvallisuuteen muuttui sen jälkeen kun teit harjoitukset?
 
