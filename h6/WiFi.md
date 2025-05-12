@@ -27,6 +27,14 @@ Asentelin ja käynnistelin VirtualBox imagella virtuaalikoneen tehtävää varte
 ### Recon MGT
 
 ### MGT
+Tähän jäätiinkin lopulta valitettavasti jumiin. En saanut ratkaistua ongelmaa Hashcat toiminnan kanssa, edeltävissä tehtävissä toimi kyllä moitteitta, mutta nyt jäi valittelemaan OpenCL toimintaa.
+
+![K1](1.png)
+
+Loppujen lopuksi tuli kuitenkin ratkottua ihan kattavasti tehtäviä. MGT ratkominen jäi toiseen kertaan, kun paremmalla ajalla pystyn selvittelemään mistä OpenCL virhe johtui.
+
+![K2](2.png)
+![K3](3.png)
 
 ## c) Miten suhtautumisesi WLanin turvallisuuteen muuttui sen jälkeen kun teit harjoitukset?
 
