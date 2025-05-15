@@ -10,4 +10,4 @@ Homework reports for Haaga-Helia Network Attacks and Reconnaissance course. Repo
 - [Viikko 6](h6/WiFi.md)
 
 ## Lipunryöstö (CTF)
-- Kilpailun sijoitus XXX
+- Kilpailun sijoitus 3.
